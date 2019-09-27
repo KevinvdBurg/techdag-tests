@@ -1,5 +1,7 @@
 name: CI
 
+#Execute on master pull and any pull request
+
 on: 
   push:
     branches: master
