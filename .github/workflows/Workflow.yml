@@ -1,0 +1,20 @@
+name: CI
+
+on: 
+  push:
+    branches:
+     - master
+  pull_request:
+    branches: *
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Package restore
+      run: dotnet restore
+    - name: Execute tests
+      run: dotnet test
